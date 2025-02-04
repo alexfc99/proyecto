@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flickr</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script>
+
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div id="banner">
+            <h1>Flickr</h1>
+            <img src="banner2.jpg" alt="Banner de Flickr">
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><button id="new_post" class="animated-button"> <span>+ Nuevo Post</span><span></span></button></li>
+        </ul>
+    </nav>
+    <div id="dialog-confirm" title="¿Estás seguro de que quieres eliminar esta publicación?" style="display:none;">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Esta publicación será eliminada permanentemente y no podrá ser recuperada. ¿Estás seguro?</p>
+    </div>
+    <div id="dialog" title="Mensaje">
+        <p id="dialogMessage"></p>
+    </div>
+    <div id="formContainer" class="form-container">
+        <h2 id="formTitle">Crear Publicación</h2>
+        <form id="postForm" enctype="multipart/form-data">
+            <input type="hidden" id="postId" name="id">
+            <input type="text" id="postTitle" name="title" placeholder="Título" required>
+            <textarea id="postContent" name="content" placeholder="Contenido" required></textarea>
+            <input type="file" id="postImage" name="image" accept="image/*"><br><br>
+            <button type="submit" id="submitBtn" class="animated-button"> <span>Crear Post</span><span></span></button>
+        </form>
+    </div>
+
+    <div id="searchContainer" class="search-container">
+        <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g>
+            </svg>
+            <input placeholder="Buscar publicaciones..." type="search" class="input" id="searchInput" onkeyup="searchPosts()">
+        </div>
+    </div>
+
+    <section id="postsContainer" class="posts-container">
+        <h2>Publicaciones</h2>
+        <div id="postsList"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Flickr</p>
+    </footer>
+
+</body>
+</html>

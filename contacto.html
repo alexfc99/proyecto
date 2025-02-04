@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script src="contacto.js"></script>
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+<div id="dialog" title="Mensaje">
+    <p id="dialogMessage"></p>
+</div>
+<section id="contactContainer" class="contact-container">
+    <h2>Contacto</h2>
+    <form id="contactForm">
+        <input type="text" id="contactName" name="contactName" placeholder="Tu nombre" >
+        <input type="email" id="contactEmail" name="contactEmail" placeholder="Tu correo" >
+        <textarea id="contactMessage" name="contactMessage" placeholder="Escribe tu mensaje" ></textarea>
+        <button type="submit" id="submitContactBtn">Enviar</button>
+    </form>
+</section>
+
+<footer id="contacto">
+    <p>&copy; 2025 Flickr</p>
+</footer>
+
+</body>
+</html>
