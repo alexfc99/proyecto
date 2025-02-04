@@ -102,9 +102,6 @@ $(document).ready(function () {
             success: function (data) {
                 postsList.html(data).hide().fadeIn(1000);
                 attachPostEvents();
-            },
-            error: function () {
-                showDialog('Error al cargar las publicaciones.');
             }
         });
         postsList.empty();
