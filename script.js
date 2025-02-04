@@ -114,8 +114,8 @@ $(document).ready(function () {
                     <h3>${post.title}</h3>
                     <p class="content">${post.content}</p>
                     ${post.image ? `<img src="${post.image}" class="post-image" alt="Imagen de la publicación">` : ''}
-                    <br><br> <button class="edit-btn" class="animated-button"><span>Editar Post</span></button> 
-                    <button class="delete-btn" class="animated-button"><span>Borrar Post</span></button> 
+                    <br><br> <button class="edit-btn" class="animated-button"><span>Editar Post</span><span></span></button> 
+                    <button class="delete-btn" class="animated-button"><span>Borrar Post</span><span></span></button> 
                     <p>${post.created_at}</p>
                 </div>`;
             postsList.append(postHtml);
