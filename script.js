@@ -10,6 +10,37 @@ $(document).ready(function () {
     let isEditing = false;
     let currentPost = null;
 
+    const posts = [
+        {
+            id: 1,
+            title: 'Primer Post',
+            content: 'Este es un post de flores.',
+            image: 'uploads/flores.jpg',
+            created_at: '2025-02-04 10:00:00'
+        },
+        {
+            id: 2,
+            title: 'Segundo Post',
+            content: 'Post de gato.',
+            image: 'uploads/gato.jpg',
+            created_at: '2025-02-04 12:00:00'
+        },
+        {
+            id: 3,
+            title: 'Tercer Post',
+            content: 'Post de perro.',
+            image: 'uploads/perro.jpg',
+            created_at: '2025-02-04 17:00:00'
+        },
+        {
+            id: 4,
+            title: 'Cuarto Post',
+            content: 'Post de paisaje.',
+            image: 'uploads/paisaje.jpg',
+            created_at: '2025-02-04 19:00:00'
+        }
+    ];
+
     initEventListeners();
     loadPosts();
     initDialogs();
@@ -75,6 +106,19 @@ $(document).ready(function () {
             error: function () {
                 showDialog('Error al cargar las publicaciones.');
             }
+        });
+        postsList.empty();
+        posts.forEach(post => {
+            const postHtml = `
+                <div class="post" data-id="${post.id}">
+                    <h3>${post.title}</h3>
+                    <p class="content">${post.content}</p>
+                    ${post.image ? `<img src="${post.image}" class="post-image" alt="Imagen de la publicación">` : ''}
+                    <br><br> <button class="edit-btn" class="animated-button"><span>Editar Post</span></button> 
+                    <button class="delete-btn" class="animated-button"><span>Borrar Post</span></button> 
+                    <p>${post.created_at}</p>
+                </div>`;
+            postsList.append(postHtml);
         });
     }
 
